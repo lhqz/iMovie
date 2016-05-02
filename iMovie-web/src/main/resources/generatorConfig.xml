@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="/home/lhqz/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>
+	<context id="mysqlGenerator" targetRuntime="MyBatis3">
+	    <!-- plugin start -->
+	    	<!-- <plugin type="com.vince.utils.mybaties.plugin.MySqlPaginationPlugin" /> -->
+	    <!-- plugin end -->
+	    
+	    <!-- 去掉默认的注释 -->
+		<commentGenerator>
+  			 <property name="suppressAllComments" value="true" />
+  			 <property name="suppressAllComments" value="true" />  
+ 		</commentGenerator>
+ 		
+ 		<!-- 配置连接数据信息 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+		    connectionURL="jdbc:mysql://192.168.0.109:3306/test"
+			userId="root" password="root" />
+		<javaTypeResolver>  
+            <property name="forceBigDecimals" value="false" />  
+        </javaTypeResolver>
+        
+		<!-- 配置自动生成的Model的保存路径与其它参数 -->
+		<javaModelGenerator targetPackage="org.youth.imovie.pojo.entity"
+			targetProject="/home/lhqz/data/git/iMovie/iMovie-web/src/main/java">
+			<!--  <property name="enableSubPackages" value="true" />  -->
+            <property name="trimStrings" value="true" /> 
+		</javaModelGenerator>
+		
+		<!-- 配置自动生成的Mappper.xml映射的保存路径与其它参数 -->
+		<sqlMapGenerator targetPackage="mybatis.dao" targetProject="/home/lhqz/data/git/iMovie/iMovie-web/src/main/resources/">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		
+		<!-- 配置自动生成的Mappper.java接口的保存路径与其它参数 -->
+		<javaClientGenerator targetPackage="org.youth.imovie.dao"
+			targetProject="/home/lhqz/data/git/iMovie/iMovie-web/src/main/java" type="XMLMAPPER" >
+			<!-- <property name="enableSubPackages" value="false" /> -->
+		</javaClientGenerator>
+		
+		<table schema="Test" tableName="test"></table>
+		
+	</context>
+</generatorConfiguration>
