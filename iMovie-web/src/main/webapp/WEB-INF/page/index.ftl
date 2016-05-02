@@ -5,6 +5,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-11111111111111111
+<#list pageinfo.list as test>  
+id : ${test.id}
+name : ${test.name}  <br/>  
+</#list> 
+${pageinfo.total}
 </body>
 </html>
